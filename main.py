@@ -10,7 +10,7 @@ app = Flask("rook-radar-server")
 def mainpage():
     log.info("main page read")
     with open(DATAFILE, 'r') as fh:
-        return make_response(fh.read())
+        return make_response('<pre>' + fh.read() + '</pre>')
 
 
 @app.route("/datum", methods=["PUT", "POST"])
